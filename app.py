@@ -9,8 +9,6 @@ import socket
 
 app = Flask(__name__)
 
-if not os.path.exists("files"):
-    os.makedirs("files")
     
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -97,7 +95,7 @@ def status():
     free_space = int(usage.free / 1024)
     return jsonify({"free_space": free_space})
 
-
+'''
 @app.route("/config", methods=["GET"])
 def config():
     return jsonify(
@@ -107,7 +105,7 @@ def config():
             "lock_status": lock_status,
         }
     )
-
+'''
 if __name__ == "__main__":
     os.makedirs(UPLOAD_FOLDER, exist_ok = True)
     app.run(host='0.0.0.0')
