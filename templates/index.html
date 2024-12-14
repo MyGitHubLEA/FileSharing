@@ -31,6 +31,7 @@
         <li>
             <a href="{{ url_for('uploaded_file', filename=filename) }}">{{ filename}}</a>
             <a href="{{ url_for('uploaded_file', filename=filename) }}" download>Download file</a>
+            <a href="{{ url_for('delete_file', filename=filename) }}" class="delete-link">(Delete)</a>
             <input type="text" id="fileLink" value="{{ url_for('uploaded_file', filename=filename) }}" style="display: none;">
         </li>
             {% endfor %}
